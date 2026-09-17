@@ -1,3 +1,9 @@
 spring:
   application:
     name: capstone-project-1-phoenix
+
+jwt:
+  secret: ${JWT_SECRET:}
+  expiration: 86400000
+
+
