@@ -2,6 +2,8 @@ package org.hdfc.controller;
 
 
 import org.hdfc.dto.LoginResponse;
+import org.hdfc.exception.InvalidCredentialsException;
+import org.hdfc.exception.InvalidTokenException;
 import org.hdfc.jwt.JwtService;
 import org.hdfc.model.User;
 import org.hdfc.service.AuthService;
@@ -27,7 +29,7 @@ public class AuthController {
         try{
             token=authService.login(user.getUsername(), user.getPassword());
         } catch (Exception e) {
-            throw new RuntimeException(e);
+            throw new InvalidCredentialsException("Invalid username or password");
         }
         return ResponseEntity.ok(new LoginResponse(token));
     }
