@@ -14,10 +14,14 @@ import javax.crypto.SecretKey;
 import java.nio.charset.StandardCharsets;
 import java.util.Date;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 @Service // Added standard Spring stereotype annotation
 public class JwtService {
 
+    private static final Logger logger =
+            LoggerFactory.getLogger(JwtService.class);
 
     private String secretKey="IXI7KVeRp92b8Jl0nuZEf0CzWJuIzww03XT7nxpVTY5";
 
@@ -31,18 +35,24 @@ public class JwtService {
     }
 
     public String generateToken(String username) {
+
+        logger.debug("Generating JWT token for username: {}", username);
+
         Date now = new Date();
         Date expire = new Date(now.getTime() + expirationMs);
 
+        logger.info("JWT token generated successfully for username: {}", username);
         return Jwts.builder()
                 .subject(username)
                 .issuedAt(now)
                 .expiration(expire)
                 .signWith(getKey())
                 .compact();
+
     }
 
     public boolean validateToken(String token) {
+        logger.debug("Starting JWT token validation");
         try {
             Jwts.parser()
                     .verifyWith(getKey())

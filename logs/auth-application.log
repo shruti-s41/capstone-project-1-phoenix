@@ -1,0 +1,34 @@
+18-09-2026 12:49:46 | INFO  | o.h.CapstoneProject1PhoenixApplication | Starting CapstoneProject1PhoenixApplication using Java 25.0.4 with PID 52630 (/Users/SARVESHV/capstone-project-1-phoenix/target/classes started by SARVESHV in /Users/SARVESHV/capstone-project-1-phoenix)
+18-09-2026 12:49:46 | INFO  | o.h.CapstoneProject1PhoenixApplication | No active profile set, falling back to 1 default profile: "default"
+18-09-2026 12:49:47 | INFO  | o.h.CapstoneProject1PhoenixApplication | Started CapstoneProject1PhoenixApplication in 0.812 seconds (process running for 1.058)
+18-09-2026 12:49:47 | WARN  | o.s.c.events.SpringDocAppInitializer | SpringDoc /v3/api-docs endpoint is enabled by default. To disable it in production, set the property 'springdoc.api-docs.enabled=false'
+18-09-2026 12:49:47 | WARN  | o.s.c.events.SpringDocAppInitializer | SpringDoc /swagger-ui.html endpoint is enabled by default. To disable it in production, set the property 'springdoc.swagger-ui.enabled=false'
+18-09-2026 12:55:57 | INFO  | o.h.CapstoneProject1PhoenixApplication | Starting CapstoneProject1PhoenixApplication using Java 25.0.4 with PID 52991 (/Users/SARVESHV/capstone-project-1-phoenix/target/classes started by SARVESHV in /Users/SARVESHV/capstone-project-1-phoenix)
+18-09-2026 12:55:57 | INFO  | o.h.CapstoneProject1PhoenixApplication | No active profile set, falling back to 1 default profile: "default"
+18-09-2026 12:55:57 | INFO  | o.h.CapstoneProject1PhoenixApplication | Started CapstoneProject1PhoenixApplication in 0.816 seconds (process running for 1.045)
+18-09-2026 12:55:57 | WARN  | o.s.c.events.SpringDocAppInitializer | SpringDoc /v3/api-docs endpoint is enabled by default. To disable it in production, set the property 'springdoc.api-docs.enabled=false'
+18-09-2026 12:55:57 | WARN  | o.s.c.events.SpringDocAppInitializer | SpringDoc /swagger-ui.html endpoint is enabled by default. To disable it in production, set the property 'springdoc.swagger-ui.enabled=false'
+18-09-2026 12:56:01 | INFO  | org.hdfc.controller.AuthController | POST /login request received for username: Mitesh
+18-09-2026 12:56:01 | INFO  | org.hdfc.service.AuthService | Login attempt for username: Mitesh
+18-09-2026 12:56:01 | INFO  | org.hdfc.jwt.JwtService | JWT token generated successfully for username: Mitesh
+18-09-2026 12:56:01 | INFO  | org.hdfc.service.AuthService | Login successful and session created for username: Mitesh
+18-09-2026 12:56:01 | INFO  | org.hdfc.controller.AuthController | POST /login completed successfully for username: Mitesh
+18-09-2026 12:56:01 | INFO  | o.hdfc.config.RequestLoggingFilter | 200 | POST | /api/login | 83ms
+18-09-2026 12:56:04 | INFO  | org.hdfc.controller.AuthController | POST /login request received for username: Mitesh
+18-09-2026 12:56:04 | INFO  | org.hdfc.service.AuthService | Login attempt for username: Mitesh
+18-09-2026 12:56:04 | INFO  | org.hdfc.jwt.JwtService | JWT token generated successfully for username: Mitesh
+18-09-2026 12:56:04 | INFO  | org.hdfc.service.AuthService | Login successful and session created for username: Mitesh
+18-09-2026 12:56:04 | INFO  | org.hdfc.controller.AuthController | POST /login completed successfully for username: Mitesh
+18-09-2026 12:56:04 | INFO  | o.hdfc.config.RequestLoggingFilter | 200 | POST | /api/login | 4ms
+18-09-2026 12:56:09 | INFO  | org.hdfc.controller.AuthController | POST /login request received for username: Mites
+18-09-2026 12:56:09 | INFO  | org.hdfc.service.AuthService | Login attempt for username: Mites
+18-09-2026 12:56:09 | WARN  | org.hdfc.service.AuthService | Login failed: invalid credentials for username: Mites
+18-09-2026 12:56:09 | WARN  | o.h.exception.GlobalExceptionHandler | Invalid credentials | method=POST | path=/api/login | message=Invalid username or password
+18-09-2026 12:56:09 | WARN  | o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver | Resolved [org.hdfc.exception.InvalidCredentialsException: Invalid username or password]
+18-09-2026 12:56:09 | INFO  | o.hdfc.config.RequestLoggingFilter | 401 | POST | /api/login | 14ms
+18-09-2026 12:56:11 | INFO  | org.hdfc.controller.AuthController | POST /login request received for username: Mites
+18-09-2026 12:56:11 | INFO  | org.hdfc.service.AuthService | Login attempt for username: Mites
+18-09-2026 12:56:11 | WARN  | org.hdfc.service.AuthService | Login failed: invalid credentials for username: Mites
+18-09-2026 12:56:11 | WARN  | o.h.exception.GlobalExceptionHandler | Invalid credentials | method=POST | path=/api/login | message=Invalid username or password
+18-09-2026 12:56:11 | WARN  | o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver | Resolved [org.hdfc.exception.InvalidCredentialsException: Invalid username or password]
+18-09-2026 12:56:11 | INFO  | o.hdfc.config.RequestLoggingFilter | 401 | POST | /api/login | 5ms

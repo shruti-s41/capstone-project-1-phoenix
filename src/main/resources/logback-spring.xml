@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<configuration>
+
+    <property name="LOG_FILE" value="logs/auth-application.log"/>
+
+    <!-- Console appender -->
+    <appender name="CONSOLE"
+              class="ch.qos.logback.core.ConsoleAppender">
+
+        <encoder>
+            <pattern>
+                %d{dd-MM-yyyy HH:mm:ss} | %-5level | %logger{36} | %msg%n
+            </pattern>
+        </encoder>
+
+    </appender>
+
+    <!-- File appender -->
+    <appender name="FILE"
+              class="ch.qos.logback.core.rolling.RollingFileAppender">
+
+        <file>${LOG_FILE}</file>
+
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <fileNamePattern>
+                logs/auth-application.%d{yyyy-MM-dd}.log
+            </fileNamePattern>
+
+            <maxHistory>7</maxHistory>
+        </rollingPolicy>
+
+        <encoder>
+            <pattern>
+                %d{dd-MM-yyyy HH:mm:ss} | %-5level | %logger{36} | %msg%n
+            </pattern>
+        </encoder>
+
+    </appender>
+
+    <!-- Application logs -->
+    <logger name="org.hdfc" level="INFO"/>
+
+    <root level="WARN">
+        <appender-ref ref="CONSOLE"/>
+        <appender-ref ref="FILE"/>
+    </root>
+
+</configuration>
