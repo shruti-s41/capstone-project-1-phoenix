@@ -1,8 +1,11 @@
 package org.hdfc.jwt;
 
 import io.jsonwebtoken.Claims;
+import io.jsonwebtoken.ExpiredJwtException;
+import io.jsonwebtoken.JwtException;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.security.Keys;
+import org.hdfc.exception.InvalidTokenException;
 import org.hdfc.model.User;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
@@ -46,19 +49,25 @@ public class JwtService {
                     .build()
                     .parseSignedClaims(token);
             return true;
-        } catch (Exception e) {
-            // Consider logging the exception for debugging purposes (e.g., ExpiredJwtException)
-            return false;
+        } catch (InvalidTokenException e) {
+            throw new InvalidTokenException("Invalid JWT token");
         }
     }
 
     public String extractUsername(String token) {
-        Claims claims = Jwts.parser()
-                .verifyWith(getKey())
-                .build()
-                .parseSignedClaims(token)
-                .getPayload();
+       try {
+           Claims claims = Jwts.parser()
+                   .verifyWith(getKey())
+                   .build()
+                   .parseSignedClaims(token)
+                   .getPayload();
 
-        return claims.getSubject();
+           return claims.getSubject();
+       }catch (ExpiredJwtException e) {
+           throw new InvalidTokenException("Expired JWT token");
+       }
+       catch (JwtException e) {
+           throw new InvalidTokenException("Invalid JWT token");
+       }
     }
 }
